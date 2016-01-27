@@ -10,11 +10,11 @@ class MessagesController < ApplicationController
     if @message.valid?
       MessageMailer.new_message(@message).deliver
       respond_to do |format|
-        format.html {redirect_to root_path, notice: "Your messages has been sent."}
+        format.html {redirect_to root_path, notice: "Your message has been sent!"}
         format.js
       end
     else
-      flash[:alert] = "An error occurred while delivering this message."
+      flash[:alert] = "An error occurred while delivering your message."
       respond_to do |format|
         format.html {render "new"}
         format.js

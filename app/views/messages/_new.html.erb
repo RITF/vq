@@ -1,26 +1,25 @@
-<div id="logo" style="padding:5px;margin-top:-10px;width:75px;background: #303050">
-<%= render 'vq/vq_logo' %>
-</div>
-<%= form_for @message, url: contact_path, remote: true  do |f| %>
-  <fieldset>
-  <legend><h6> Contact Us </h6></legend>
-    <div class="field">
-      <%= f.text_field :name, placeholder: "Your Name", required: true %>
-    </div>
-    
-    <div class="field">
-      <%= f.email_field :email, placeholder: "Your Email", required: true %>
-    </div>
-    
-    <div class="field">
-      <%= f.text_field :subject, size:25, placeholder: "Subject" %>
-    </div>
+ <%= form_for @message, url: contact_path, remote: true  do |f| %>
+  <div id="contact-form" class="row">
+      <h1><strong><span style="color:#FFFFD8">infinite</span><span style="color:#1DBA99">contact</span></strong></h1>
+      <div id="errs" style="color:#FFFFD8"></div>
+      <%= label_tag(:name) do %>
+        Name
+      <% end %>
+      <%= f.text_field :name, placeholder: "e.g. John Smith" %>
+      <%= label_tag(:email) do %>
+        Email (no spam, we promise) <!-- <small class="right">REQUIRED</small> -->
+      <% end %>
+      <%= f.email_field :email, placeholder: "e.g. you@example.com", required: true  %>
+      <%= label_tag(:subject, "Subject") %>
+      <%= f.text_field :subject, size:25, placeholder: "e.g. Thanks for all the Fish" %>
+      <%= label_tag(:content) do %>
+        Message <!-- <small class="right">REQUIRED</small> -->
+      <% end %>
+      <%= f.text_area :content, cols:35, rows:8, placeholder: "The thing you wanted to say", required: true %>
 
-    <div class="field">
-      <%= f.text_area :content, cols:35, rows:8, placeholder: "Message", required: true %>
-    </div>
-    <div class="field" style="float: right">
-      <%= f.submit "Send" %>
-    </div>
-  </fieldset>
+      <div class="right">
+        <%= f.submit "Send" %>
+      </div>
+  </div>
 <% end %>
+

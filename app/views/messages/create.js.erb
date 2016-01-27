@@ -1,6 +1,6 @@
 <% if @message.errors.any? %>
-  alert("<%= @message.errors.full_messages.first %>");
-  $('#modal-content').html("<%= escape_javascript(render(partial:'new')).html_safe %>")
+  $("#errs").html("<%= @message.errors.full_messages.first %>");
+  // $('#modal-content').html("<%= escape_javascript(render(partial:'new')).html_safe %>")
 <% else %>
   $('#modal').foundation('close');
   alert("Thank you for contacting us");

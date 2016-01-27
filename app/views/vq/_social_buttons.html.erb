@@ -1,15 +1,21 @@
 <div id="fb-share-container">
-  <div class="fb-share-button small-4 columns"
-    data-href="<%= root_url %>?ref=<%= get_share_token @level %>"
-    data-layout="button_count">
+  <div class="social-button">
+    <div class="fb-share-button"
+      data-href="<%= root_url %>?ref=<%= get_share_token @level %>"
+      data-layout="button_count">
+    </div>
   </div>
-  <div class="fb-like small-4 columns"
-    data-href="<%= root_url %>""
-    data-layout="button_count"
-    data-action="like"
-    data-show-faces="false">
+  <div class="social-button">
+    <div class="fb-like"
+      data-href="<%= root_url %>""
+      data-layout="button_count"
+      data-action="like"
+      data-show-faces="false">
+    </div>
   </div>
-  <div class="small-4 columns">
-    <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+  <div class="social-button">
+    <div class="twitter-tweet">
+      <a href="https://twitter.com/share" class="twitter-share-button"{count}>Tweet</a>
+    </div>
   </div>
 </div>
